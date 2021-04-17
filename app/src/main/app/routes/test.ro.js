@@ -2,7 +2,7 @@ const router = require(`koa-router`)()
 
 
 router
-  .get('/', parseAuth, () => {
+  .get('/', () => {
     ctx.body = 'Ok'
   })
 
