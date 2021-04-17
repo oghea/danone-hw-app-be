@@ -1,0 +1,30 @@
+// Danone backend hw app
+
+npx sequelize model:create --name user --attributes 'name:String,password:String,email:string,mobile:string,address:string,role:integer'
+
+npx sequelize model:create --name profile --attributes 'name:String,age:integer,height:integer,weight:integer,gender:integer,pregnancy:integer,gpa:integer,userId:integer'
+
+npx sequelize model:create --name hydration_history --attributes 'status:String,time:String,userId:integer'
+
+
+
+// danone backend
+npx sequelize model:create --name province --attributes 'name:String'
+
+npx sequelize model:create --name city --attributes 'name:String,provinceId:integer'
+
+npx sequelize-cli seed:generate --name province
+
+npx sequelize-cli seed:generate --name city
+
+npx sequelize model:create --name ahs --attributes 'name:String,address:String'
+
+npx sequelize model:create --name product --attributes 'name:String,value:integer,time:integer,timeType:String,price:integer,discount:integer'
+
+npx sequelize model:create --name subscription --attributes 'duration:integer,deliveryTime:integer,amount:integer,notes:String,userId:integer,productId:integer'
+
+npx sequelize model:create --name confirmation --attributes 'nameBank:String,nameAccountBank:String,noBankAccount:String,amount:integer,dateTransfer:date,subscriptionId:integer'
+
+npx sequelize model:create --name schedule --attributes 'status:integer,number:String,date:Date,time:integer,subscriptionId:integer,amount:integer'
+
+npx sequelize model:create --name schedule_history --attributes 'scheduleId:integer,fromDate:Date,fromTime:integer,toDate:Date,toTime:integer,reason:String'

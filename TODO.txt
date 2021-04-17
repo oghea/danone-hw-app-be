@@ -1,0 +1,9 @@
+BE: @prayoga
+1. Record Family Details, Record HW ID APP when create history
+2. All API Profile Online (CRUD)
+3. Give WA Link if threshold empty
+4. Show WA Link at Home Page
+
+
+@ko-edo
+1. Buat Metric untuk ADMIN Panel
