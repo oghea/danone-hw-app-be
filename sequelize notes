@@ -4,7 +4,7 @@ npx sequelize model:create --name user --attributes 'name:String,password:String
 
 npx sequelize model:create --name profile --attributes 'name:String,age:integer,height:integer,weight:integer,gender:integer,pregnancy:integer,gpa:integer,userId:integer'
 
-npx sequelize model:create --name hydration_history --attributes 'status:String,time:String,userId:integer'
+npx sequelize model:create --name hydration_history --attributes 'status:String,time:String,userId:integer,family:json,version:integer'
 
 
 

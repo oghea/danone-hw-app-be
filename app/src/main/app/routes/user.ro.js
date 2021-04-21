@@ -8,6 +8,6 @@ router
   .post('/register/onlyname', userController.createUserWithouPassword)
   .post('/register', userController.createUser)
   .post('/login', userController.login)
-  .post('/profile', userController.createProfile)
+  .post('/profile', parseAuth, userController.createProfile)
 
 module.exports = router

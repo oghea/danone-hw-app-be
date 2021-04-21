@@ -47,9 +47,7 @@ exports.createUser = async (ctx) => {
   const {
     name,
     password,
-    mobile,
-    email,
-    address
+    mobile
   } = ctx.request.body
 
   const salt = bcrypt.genSaltSync(10);
@@ -58,9 +56,7 @@ exports.createUser = async (ctx) => {
   const data = {
     name: name,
     password: hash,
-    email: email,
     mobile: mobile,
-    address: address,
     role: 1
   }
 
