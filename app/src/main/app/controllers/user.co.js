@@ -108,27 +108,56 @@ exports.login = async (ctx) => {
 
 exports.createProfile = async (ctx) => {
   const {
-    name,
-    age,
-    height,
-    weight,
-    gender,
-    pregnancy,
-    gpa
+    dewasaL,
+    dewasaP,
+    anakL,
+    anakP
   } = ctx.request.body
 
   const data = {
-    name: name,
-    age: age,
-    height: height,
-    weight: weight,
-    gender: gender,
-    pregnancy: pregnancy,
-    gpa: gpa,
+    dewasaL: dewasaL,
+    dewasaP: dewasaP,
+    anakL: anakL,
+    anakP: anakP,
     userId: ctx.user.id
   }
 
   const profile = await Profile.create(data);
+
+  ctx.body = profile
+}
+
+exports.getProfile = async (ctx) => {
+
+  const profile = await Profile.findOne({
+    where: {
+      userId: ctx.user.id
+    }
+  });
+
+  ctx.body = profile
+}
+
+exports.editProfile = async (ctx) => {
+  const {
+    dewasaL,
+    dewasaP,
+    anakL,
+    anakP
+  } = ctx.request.body
+
+  const data = {
+    dewasaL: dewasaL,
+    dewasaP: dewasaP,
+    anakL: anakL,
+    anakP: anakP
+  }
+
+  const profile = await Profile.update(data, {
+    where: {
+      userId: ctx.user.id
+    }
+  });
 
   ctx.body = profile
 }

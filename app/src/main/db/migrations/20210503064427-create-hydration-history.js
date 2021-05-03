@@ -20,9 +20,6 @@ module.exports = {
       family: {
         type: Sequelize.JSON
       },
-      version: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

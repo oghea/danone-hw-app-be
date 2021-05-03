@@ -19,8 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.STRING,
     time: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    family: DataTypes.JSON,
-    version: DataTypes.INTEGER
+    family: DataTypes.JSON
   }, {
     sequelize,
     modelName: 'hydration_history',
