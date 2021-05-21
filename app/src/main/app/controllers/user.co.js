@@ -161,3 +161,44 @@ exports.editProfile = async (ctx) => {
 
   ctx.body = profile
 }
+
+exports.editUser = async (ctx) => {
+  const {
+    name,
+    mobile
+  } = ctx.request.body
+
+  const data = {
+    name: name,
+    mobile: mobile
+  }
+
+  const user = await User.update(data, {
+    where: {
+      id: ctx.user.id
+    }
+  })
+
+  ctx.body = user
+}
+
+exports.editPassword = async (ctx) => {
+  const {
+    password
+  } = ctx.request.body
+
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(password, salt);
+
+  const data = {
+    password: hash
+  }
+
+  const user = await User.update(data, {
+    where: {
+      id: ctx.user.id
+    }
+  })
+
+  ctx.body = user
+}

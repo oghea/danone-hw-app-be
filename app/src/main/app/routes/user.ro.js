@@ -11,5 +11,7 @@ router
   .post('/profile', parseAuth, userController.createProfile)
   .get('/profile', parseAuth, userController.getProfile)
   .patch('/profile', parseAuth, userController.editProfile)
+  .patch('/user/edit', parseAuth, userController.editUser)
+  .patch('/user/edit-password', parseAuth, userController.editPassword)
 
 module.exports = router

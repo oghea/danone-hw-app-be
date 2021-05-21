@@ -15,10 +15,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       mobile: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       address: {
         type: Sequelize.STRING
