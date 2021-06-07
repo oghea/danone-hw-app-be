@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   hydration_history.init({
-    status: DataTypes.STRING,
+    status: DataTypes.INTEGER,
     time: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     family: DataTypes.JSON

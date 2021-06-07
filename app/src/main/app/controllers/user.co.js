@@ -142,15 +142,13 @@ exports.editProfile = async (ctx) => {
   const {
     dewasaL,
     dewasaP,
-    anakL,
-    anakP
+    anak
   } = ctx.request.body
 
   const data = {
     dewasaL: dewasaL,
     dewasaP: dewasaP,
-    anakL: anakL,
-    anakP: anakP
+    anak: anak
   }
 
   const profile = await Profile.update(data, {

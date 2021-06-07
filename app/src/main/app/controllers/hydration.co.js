@@ -10,7 +10,8 @@ exports.createHydrationHistory = async (ctx) => {
     const hydrationData = {
       status: element.status,
       time: element.time,
-      userId: ctx.user.id
+      userId: ctx.user.id,
+      family: element.family
     }
     await HydrationHistory.create(hydrationData);
   }

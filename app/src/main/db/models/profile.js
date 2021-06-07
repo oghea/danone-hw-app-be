@@ -18,8 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   profile.init({
     dewasaL: DataTypes.INTEGER,
     dewasaP: DataTypes.INTEGER,
-    anakL: DataTypes.INTEGER,
-    anakP: DataTypes.INTEGER,
+    anak: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {
     sequelize,

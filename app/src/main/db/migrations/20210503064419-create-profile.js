@@ -14,10 +14,7 @@ module.exports = {
       dewasaP: {
         type: Sequelize.INTEGER
       },
-      anakL: {
-        type: Sequelize.INTEGER
-      },
-      anakP: {
+      anak: {
         type: Sequelize.INTEGER
       },
       userId: {
