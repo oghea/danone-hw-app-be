@@ -6,6 +6,6 @@ const {
 } = require("middlewares/parseAuth");
 
 router
-  .post('/contact-us', parseAuth, contactController.contactUs)
+  .post('/contact-us', contactController.contactUs)
 
 module.exports = router

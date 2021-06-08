@@ -110,15 +110,13 @@ exports.createProfile = async (ctx) => {
   const {
     dewasaL,
     dewasaP,
-    anakL,
-    anakP
+    anak
   } = ctx.request.body
 
   const data = {
     dewasaL: dewasaL,
     dewasaP: dewasaP,
-    anakL: anakL,
-    anakP: anakP,
+    anak: anak,
     userId: ctx.user.id
   }
 
