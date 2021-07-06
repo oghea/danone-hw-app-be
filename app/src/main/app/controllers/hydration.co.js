@@ -11,7 +11,8 @@ exports.createHydrationHistory = async (ctx) => {
       status: element.status,
       time: element.time,
       userId: ctx.user.id,
-      family: element.family
+      family: element.family,
+      deviceId: element.deviceId
     }
     await HydrationHistory.create(hydrationData);
   }

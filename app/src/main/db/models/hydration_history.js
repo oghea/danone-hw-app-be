@@ -16,10 +16,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   hydration_history.init({
-    status: DataTypes.INTEGER,
+    status: DataTypes.STRING,
     time: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    family: DataTypes.JSON
+    family: DataTypes.JSON,
+    deviceId: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'hydration_history',

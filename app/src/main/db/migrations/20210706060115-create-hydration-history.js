@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       status: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       time: {
         type: Sequelize.STRING
@@ -19,6 +19,9 @@ module.exports = {
       },
       family: {
         type: Sequelize.JSON
+      },
+      deviceId: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
