@@ -8,6 +8,7 @@ const {
 router
   .post('/hydration', parseAuth, hydrationController.createHydrationHistory)
   .get('/hydration', parseAuth, hydrationController.getHydrationHistory)
+  .delete('/hydration', parseAuth, hydrationController.deleteAllHydrationData)
   .get('/admin/hydration', parseAuth, isAdmin, hydrationController.getHydrationHistoryAdmin)
 
 module.exports = router
