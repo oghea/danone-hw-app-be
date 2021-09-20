@@ -10,5 +10,6 @@ router
   .get('/hydration', parseAuth, hydrationController.getHydrationHistory)
   .delete('/hydration', parseAuth, hydrationController.deleteAllHydrationData)
   .get('/admin/hydration', parseAuth, isAdmin, hydrationController.getHydrationHistoryAdmin)
+  .get('/admin/excel/hydration', parseAuth, isAdmin, hydrationController.downloadExcelHydration)
 
 module.exports = router

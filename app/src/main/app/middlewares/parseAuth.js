@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const userService = require('services/user.js')
 
 exports.parseAuth = async (ctx, next) => {
+
   const {
     authorization
   } = ctx.header
@@ -15,11 +16,15 @@ exports.parseAuth = async (ctx, next) => {
   } catch (err) {
     ctx.throw(401, 'Unauthorized')
   }
+
+  console.log('hello')
   await next()
 }
 
 exports.isAdmin = async (ctx, next) => {
   const user = await userService.getOne(ctx.user.id);
+
+  console.log(user.role);
 
   if (user.role != 0) throw ({
     message: 'Forbiden',
