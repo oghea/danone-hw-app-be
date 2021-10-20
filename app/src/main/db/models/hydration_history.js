@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     family: DataTypes.JSON,
     deviceId: DataTypes.STRING,
-    uniqueKey: DataTypes.STRING
+    uniqueKey: DataTypes.STRING,
+    hydrationStatus: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'hydration_history',

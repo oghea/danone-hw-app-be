@@ -33,7 +33,8 @@ exports.createHydrationHistory = async (ctx) => {
         userId: ctx.user.id,
         family: element.family,
         deviceId: element.deviceId,
-        uniqueKey: uniqueKey
+        uniqueKey: uniqueKey,
+        hydrationStatus: element.hydrationStatus,
       }
       await HydrationHistory.create(hydrationData);
     }
@@ -90,6 +91,7 @@ exports.downloadExcelHydration = async (ctx) => {
       time: obj.time,
       deviceId: obj.deviceId,
       family: obj.family,
+      hydrationStatus: obj.hydrationStatus
     });
   });
 
@@ -113,6 +115,12 @@ exports.downloadExcelHydration = async (ctx) => {
       key: "id",
       width: 5
     },
+
+    {
+      header: "Device Id",
+      key: "deviceId",
+      width: 10
+    },
     {
       header: "Customer Name",
       key: "customerName",
@@ -134,8 +142,8 @@ exports.downloadExcelHydration = async (ctx) => {
       width: 10
     },
     {
-      header: "Device Id",
-      key: "deviceId",
+      header: "Hydration Status",
+      key: "hydrationStatus",
       width: 10
     },
   ];
