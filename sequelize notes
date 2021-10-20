@@ -28,3 +28,5 @@ npx sequelize model:create --name confirmation --attributes 'nameBank:String,nam
 npx sequelize model:create --name schedule --attributes 'status:integer,number:String,date:Date,time:integer,subscriptionId:integer,amount:integer'
 
 npx sequelize model:create --name schedule_history --attributes 'scheduleId:integer,fromDate:Date,fromTime:integer,toDate:Date,toTime:integer,reason:String'
+
+D@none18be()

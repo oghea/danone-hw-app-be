@@ -26,9 +26,6 @@ module.exports = {
       uniqueKey: {
         type: Sequelize.STRING
       },
-      hydrationStatus: {
-        type: Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
