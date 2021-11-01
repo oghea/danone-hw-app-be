@@ -75,6 +75,43 @@ exports.createUser = async (ctx) => {
   }
 }
 
+exports.createUserAdmin = async (ctx) => {
+  const {
+    name,
+    password,
+    mobile,
+    code
+  } = ctx.request.body
+
+  if (code != 'danoneuseradmin') {
+    return;
+  }
+
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(password, salt);
+
+  const data = {
+    name: name,
+    password: hash,
+    mobile: mobile,
+    role: 0
+  }
+
+  const user = await User.create(data);
+
+  const token = jwt.sign({
+    name: user.name,
+    id: user.id
+  }, process.env[`JWT_SECRET_KEY`]);
+
+  delete user.dataValues.password
+
+  ctx.body = {
+    ...user.dataValues,
+    token: token
+  }
+}
+
 exports.login = async (ctx) => {
   const {
     mobile,

@@ -6,6 +6,7 @@ const {
 
 router
   .post('/register/onlyname', userController.createUserWithouPassword)
+  .post('/register/admin', userController.createUserAdmin)
   .post('/register', userController.createUser)
   .post('/login', userController.login)
   .post('/profile', parseAuth, userController.createProfile)
