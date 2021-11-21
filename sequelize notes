@@ -30,3 +30,8 @@ npx sequelize model:create --name schedule --attributes 'status:integer,number:S
 npx sequelize model:create --name schedule_history --attributes 'scheduleId:integer,fromDate:Date,fromTime:integer,toDate:Date,toTime:integer,reason:String'
 
 D@none18be()
+
+081237451442
+admindanone
+
+ssh userappsedo-adm@18.138.28.107
