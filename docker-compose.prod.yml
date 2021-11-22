@@ -15,6 +15,8 @@ services:
         networks:
             - default
             - nginx_net
+        external_links:
+            - frontend_frontend_1
         volumes:
             - static:/static
             - nginx-log:/var/log/nginx
