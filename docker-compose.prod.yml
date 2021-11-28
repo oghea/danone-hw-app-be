@@ -7,7 +7,7 @@ services:
         image: danone-nginx
         ports:
             - "8080:80"
-            - "80443:443"
+            - "8043:443"
         depends_on:
             - app
         links:
