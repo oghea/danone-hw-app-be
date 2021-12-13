@@ -23,6 +23,12 @@ module.exports = ({app}) => {
   // Middleware for logging response time
   app.use(koaLogger());
 
+  app.use(async (ctx, next) => {
+    ctx.set('X-Frame-Options', 'DENY');
+    ctx.set('Content-Security-Policy', "frame-ancestors 'none'");
+    await next();
+  });
+
   // Load all api router from router folder
   app.useRouter = (router) => {
     fs.readdirSync(`./src/main/app/routes`).filter(file => fs.statSync(path.join(`./src/main/app/routes`, file)).isFile()).forEach((route) => {
